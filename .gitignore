@@ -1,0 +1,8 @@
+.DS_Store
+
+# Obsidian local-only state (device-specific, not meant to sync)
+cbl-wiki/.obsidian/workspace.json
+cbl-wiki/.obsidian/workspace-mobile.json
+
+# Native plugin binaries (platform-specific, not needed on Android)
+cbl-wiki/.obsidian/plugins/lean-terminal/node_modules/

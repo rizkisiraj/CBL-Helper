@@ -1,0 +1,44 @@
+{
+  "collapse-filter": true,
+  "search": "-path:index -path:log -path:challenge",
+  "showTags": false,
+  "showAttachments": false,
+  "hideUnresolved": false,
+  "showOrphans": true,
+  "collapse-color-groups": true,
+  "colorGroups": [
+    {
+      "query": "path:concepts  ",
+      "color": {
+        "a": 1,
+        "rgb": 14701152
+      }
+    },
+    {
+      "query": "path:questions  ",
+      "color": {
+        "a": 1,
+        "rgb": 14725458
+      }
+    },
+    {
+      "query": "path:sources  ",
+      "color": {
+        "a": 1,
+        "rgb": 11657298
+      }
+    }
+  ],
+  "collapse-display": true,
+  "showArrow": false,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1,
+  "lineSizeMultiplier": 1,
+  "collapse-forces": true,
+  "centerStrength": 0.533072916666667,
+  "repelStrength": 10.0694444444444,
+  "linkStrength": 1,
+  "linkDistance": 280,
+  "scale": 0.5631671477923572,
+  "close": true
+}
