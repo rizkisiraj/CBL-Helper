@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Knowledge
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What is TPS (transactions per second) and why does it matter?

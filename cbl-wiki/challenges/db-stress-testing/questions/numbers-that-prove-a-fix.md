@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Impact
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What numbers prove that a fix actually improved things?

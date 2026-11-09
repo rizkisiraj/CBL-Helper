@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Knowledge
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # What is a connection pool, and why can't I just open a new connection every time?

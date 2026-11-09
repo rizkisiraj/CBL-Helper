@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Knowledge
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # What is lock contention and how does it slow things down?

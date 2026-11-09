@@ -1,7 +1,7 @@
 ---
 type: source
 url: https://www.pgbouncer.org/
-tags: [cbl]
+tags: [database, system-design]
 ---
 
 # PgBouncer docs

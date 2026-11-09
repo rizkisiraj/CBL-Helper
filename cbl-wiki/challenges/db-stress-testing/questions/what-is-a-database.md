@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Knowledge
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # What is a database, and how is it different from just storing data in a file?

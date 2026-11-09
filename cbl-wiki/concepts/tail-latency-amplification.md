@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [cbl]
+tags: [database, system-design, distributed-systems]
 ---
 
 # Tail latency amplification & head-of-line blocking

@@ -1,7 +1,7 @@
 ---
 type: source
 url: https://prometheus.io/docs/
-tags: [cbl]
+tags: [database, system-design]
 ---
 
 # Prometheus docs (+ postgres_exporter)

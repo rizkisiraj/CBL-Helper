@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Knowledge
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What is p95/p99 latency, and why is it better than averages?

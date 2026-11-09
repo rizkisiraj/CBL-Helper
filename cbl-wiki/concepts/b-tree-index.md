@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [cbl]
+tags: [database]
 ---
 
 # B-tree index (the default relational index)

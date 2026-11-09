@@ -1,7 +1,7 @@
 ---
 type: source
 url: https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MonitoringOverview.html
-tags: [cbl]
+tags: [database, system-design]
 ---
 
 # Amazon RDS monitoring docs

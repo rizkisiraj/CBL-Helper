@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Impact
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # When is performance good enough — what are realistic targets?

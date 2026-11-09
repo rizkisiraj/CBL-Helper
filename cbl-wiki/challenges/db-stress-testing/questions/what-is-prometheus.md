@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Context
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What is Prometheus, and how does it collect database metrics?

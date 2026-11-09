@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Correlations
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # How does EXPLAIN differ from EXPLAIN ANALYZE — when do I use each?

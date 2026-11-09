@@ -1,6 +1,7 @@
 ---
 type: dashboard
-tags: [cbl, moc]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Dashboard — Database Stress-Testing & Monitoring

@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Skills
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # How do I use pgbench to run a basic stress test?

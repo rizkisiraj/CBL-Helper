@@ -1,6 +1,6 @@
 ---
 type: map
-tags: [cbl, map]
+tags: [database, system-design, distributed-systems]
 ---
 
 # Learning Path & System Map

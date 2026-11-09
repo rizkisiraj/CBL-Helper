@@ -2,7 +2,7 @@
 type: source
 raw_file: raw/Martin-Kleppmann---Designing-Data-Intensive-Applications_-O’Reilly-Media-(2017).pdf
 url: https://dataintensive.net/
-tags: [cbl]
+tags: [database, system-design, distributed-systems]
 ---
 
 # Designing Data-Intensive Applications

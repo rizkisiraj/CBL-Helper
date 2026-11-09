@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Skills
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # How do I read pg_stat_activity to see what the database is doing right now?

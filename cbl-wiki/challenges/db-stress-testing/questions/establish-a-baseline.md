@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Impact
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # How do I establish a baseline to compare before vs after?

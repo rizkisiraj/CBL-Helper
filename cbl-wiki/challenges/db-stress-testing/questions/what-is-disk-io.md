@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Knowledge
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # What does disk I/O mean, and why is reading from disk slow?

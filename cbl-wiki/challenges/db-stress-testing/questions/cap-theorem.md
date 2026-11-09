@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Knowledge
-tags: [cbl]
+tags: [database, system-design, distributed-systems]
+challenge: db-stress-testing
 ---
 
 # What is the CAP theorem in simple terms — what tradeoffs exist when scaling?

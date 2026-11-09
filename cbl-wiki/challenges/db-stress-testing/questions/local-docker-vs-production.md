@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Limitations
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Will my local Docker results actually predict what happens in production?

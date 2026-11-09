@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Context
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What is Grafana, and what does a DB monitoring dashboard look like?

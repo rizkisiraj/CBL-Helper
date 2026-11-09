@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Knowledge
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # What is a table, a row, and a column — how is data organized?

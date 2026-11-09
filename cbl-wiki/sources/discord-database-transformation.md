@@ -2,7 +2,7 @@
 type: source
 raw_file: raw/discord-database-article.md
 url: https://medium.com/@siddharthgov01/case-study-discords-database-transformation-a8d5b226a7ab
-tags: [cbl]
+tags: [database, system-design, distributed-systems]
 ---
 
 # Case Study: Discord's Database Transformation (Siddharth, Medium)

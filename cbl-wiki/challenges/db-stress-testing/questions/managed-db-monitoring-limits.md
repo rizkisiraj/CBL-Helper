@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Limitations
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What can't I monitor if I use a managed database (RDS, Cloud SQL)?

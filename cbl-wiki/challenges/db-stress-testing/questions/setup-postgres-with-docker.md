@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Skills
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # How do I set up a local PostgreSQL database with Docker?

@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Context
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # What tools exist for stress testing, and which should a beginner start with?

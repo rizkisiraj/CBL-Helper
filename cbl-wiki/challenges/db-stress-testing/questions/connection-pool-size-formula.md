@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Limitations
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Is there a universal formula for the right connection pool size?

@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Impact
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Can I draw a basic architecture diagram showing where each scalability pattern fits?

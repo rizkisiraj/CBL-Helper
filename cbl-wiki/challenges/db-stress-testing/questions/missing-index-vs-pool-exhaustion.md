@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Correlations
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Missing index vs connection pool exhaustion — how do symptoms differ?

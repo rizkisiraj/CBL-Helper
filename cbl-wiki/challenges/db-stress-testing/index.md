@@ -1,6 +1,7 @@
 ---
 type: index
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # CBL Wiki — Database Stress-Testing & Monitoring System

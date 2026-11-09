@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Knowledge
-tags: [cbl]
+tags: [database, system-design, distributed-systems]
+challenge: db-stress-testing
 ---
 
 # Horizontal vs vertical scaling — when do you hit the limits of a bigger server?

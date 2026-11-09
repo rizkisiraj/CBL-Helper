@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [cbl]
+tags: [database, system-design]
 ---
 
 # SLOs / SLAs — when is performance "good enough"

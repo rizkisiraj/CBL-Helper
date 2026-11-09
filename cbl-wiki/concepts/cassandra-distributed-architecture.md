@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [cbl]
+tags: [database, system-design, distributed-systems]
 ---
 
 # Cassandra's distributed architecture (horizontal scale-out)

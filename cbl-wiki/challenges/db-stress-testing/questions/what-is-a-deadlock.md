@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Knowledge
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # What is a deadlock, and how does the database handle it?

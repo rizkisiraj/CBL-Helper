@@ -1,3 +1,9 @@
+---
+type: log
+tags: [database, system-design]
+challenge: db-stress-testing
+---
+
 # Wiki Log
 
 - 2026-06-23 — Backfilled wiki from `cbl-session.md`: challenge, 52 question pages, 8 source pages, 21 concept pages (21 questions answered). Replaces the Miro mirror.

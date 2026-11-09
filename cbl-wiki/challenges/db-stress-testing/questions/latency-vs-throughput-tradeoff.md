@@ -2,7 +2,8 @@
 type: question
 status: answered
 category: Correlations
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Latency vs throughput — can you have good throughput but bad latency?

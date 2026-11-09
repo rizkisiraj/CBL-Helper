@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [cbl]
+tags: [database]
 ---
 
 # Database index (what it is, and the read/write trade-off)

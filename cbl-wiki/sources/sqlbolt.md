@@ -1,6 +1,6 @@
 ---
 type: source
-tags: [cbl]
+tags: [database]
 ---
 
 # SQLBolt

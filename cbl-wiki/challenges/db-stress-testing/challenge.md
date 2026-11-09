@@ -1,6 +1,7 @@
 ---
 type: challenge
-tags: [cbl]
+tags: [database, system-design]
+challenge: db-stress-testing
 ---
 
 # Challenge

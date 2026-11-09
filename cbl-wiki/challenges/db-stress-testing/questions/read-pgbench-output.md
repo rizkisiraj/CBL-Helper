@@ -2,7 +2,8 @@
 type: question
 status: open
 category: Skills
-tags: [cbl]
+tags: [database]
+challenge: db-stress-testing
 ---
 
 # How do I read pgbench output — what do TPS and latency tell me?

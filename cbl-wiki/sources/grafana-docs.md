@@ -1,7 +1,7 @@
 ---
 type: source
 url: https://grafana.com/docs/grafana/latest/
-tags: [cbl]
+tags: [database, system-design]
 ---
 
 # Grafana docs
