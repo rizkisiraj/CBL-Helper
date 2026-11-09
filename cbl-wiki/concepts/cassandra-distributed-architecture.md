@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [database, system-design, distributed-systems]
+tags: [database, system-design, distributed-systems, bridge]
 ---
 
 # Cassandra's distributed architecture (horizontal scale-out)
@@ -27,6 +27,10 @@ and fault tolerance. Instead of one ever-bigger server (vertical scaling), it
 
 This is the concrete answer to "where do you go when a bigger server isn't enough":
 add nodes to the ring rather than scaling one box up.
+
+## Under the hood (DSA)
+- The memtable flushes to sorted on-disk files, and compacting those files back together is a [[two-pointers|two-pointer]] merge over sorted data — see [[lsm-tree]].
+- The distributed hash ring that assigns partitions to nodes is [[consistent-hashing]].
 
 **Answers:** [[horizontal-vs-vertical-scaling]]
 **Sources:** [[discord-database-transformation]]

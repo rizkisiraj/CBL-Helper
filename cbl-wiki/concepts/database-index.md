@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [database]
+tags: [database, bridge]
 ---
 
 # Database index (what it is, and the read/write trade-off)
@@ -10,6 +10,10 @@ An **index is an additional structure derived from the primary data** — separa
 
 - **Why it speeds reads:** scanning a table to find a key is **O(n)** — double the rows, double the lookup time. An index is a data structure (commonly a [[b-tree-index|B-tree]]) that turns that into roughly **O(log n)**: the DB jumps to the rows instead of reading every one. This is what replaces a full table scan (a [[spot-a-seq-scan|Seq Scan]]) with an index lookup.
 - **The fundamental trade-off:** *well-chosen indexes speed up reads, but every index slows down writes* — each insert/update/delete must also update every index. So databases don't index everything by default; **you** choose indexes from the app's typical query patterns to get the most read benefit for the least write overhead.
+
+## Under the hood (DSA)
+- A hash index is just a [[hashmap]]: O(1) equality lookup, but it can't do range queries the way a [[b-tree-index|B-tree]] can.
+- Spending disk space to buy query speed is the same time-space tradeoff named in [[space-complexity]].
 
 **Answers:** [[what-is-an-index]]
 **Sources:** [[designing-data-intensive-applications]]

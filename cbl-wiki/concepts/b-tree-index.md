@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [database]
+tags: [database, bridge]
 ---
 
 # B-tree index (the default relational index)
@@ -12,6 +12,10 @@ The standard index implementation in relational databases (PostgreSQL included),
 - Breaks storage into **fixed-size pages** (traditionally ~4 kB), matching how disks are arranged. Pages reference child pages (on-disk pointers), forming a tree: start at the **root**, follow the page whose key range contains your key, down to a **leaf page** holding the value.
 - A node holds *k* keys + *k+1* child references, with *k* often in the hundreds — so the tree is wide and shallow. With *n* keys the height is **O(log n)**, so even a huge table needs only a few page reads per lookup; this is the structure behind the [[database-index|index]]'s O(log n) speedup.
 - **Writes happen in place:** update = overwrite the leaf page; insert into a full page **splits** it into two half-full pages and updates the parent. (Contrast: log-structured / LSM-tree indexes only append.) In-place page overwrites are why a crash mid-split can corrupt an index, motivating a write-ahead log.
+
+## Under the hood (DSA)
+- Walking from root to leaf narrows the search range by a wide factor each step, the same "halve the search space" logic as [[binary-search]].
+- A range scan across sorted leaf pages — or a merge join across two B-tree scans — walks keys with [[two-pointers]].
 
 **Sources:** [[designing-data-intensive-applications]]
 **Related:** [[database-index]] · [[spot-a-seq-scan]]
