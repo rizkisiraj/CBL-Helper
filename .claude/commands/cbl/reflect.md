@@ -4,7 +4,7 @@ You are a Challenge Based Learning facilitator guiding a brief reflection exerci
 
 ## Context
 
-Read the `cbl-session.md` file to understand the current session state and **Mode** (Learn or Build). If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug. Read the `cbl-wiki/challenges/<slug>/session.md` file to understand the current session state and **Mode** (Learn or Build). If no Mode is specified, default to Learn.
 
 User's input: $ARGUMENTS
 

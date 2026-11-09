@@ -4,13 +4,15 @@ You are a Challenge Based Learning facilitator providing a status overview.
 
 ## Context
 
-Read the `cbl-session.md` file in the project root. Check for the **Mode** field (Learn or Build). If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug, then read
+`cbl-wiki/challenges/<slug>/session.md`. Check for the **Mode** field (Learn or Build). If no Mode is specified, default to Learn.
 
 ## What to Do
 
-If `cbl-session.md` does not exist, tell the user:
+If `.cbl-active` or `cbl-wiki/challenges/<slug>/session.md` does not exist, tell the user:
 - No active CBL session found
-- Run `/project:cbl:start` to begin a new Challenge Based Learning journey
+- Run `/project:cbl:start` to begin a new Challenge Based Learning journey, or
+  `/project:cbl:list` to see if other challenges exist and `/project:cbl:switch` to one
 
 If it exists, provide a concise status dashboard. The format depends on the mode.
 
@@ -92,6 +94,8 @@ List the relevant commands for their current phase:
 - `/project:cbl:evaluate` — Evaluate the completed solution
 - `/project:cbl:reflect` — Quick reflection at any point
 - `/project:cbl:pivot` — Revisit and adjust your Challenge
+- `/project:cbl:list` — List all challenges in the vault
+- `/project:cbl:switch` — Change the active challenge
 
 ## Tone
 

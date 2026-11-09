@@ -68,11 +68,13 @@ Example flow:
 - Essential Question: "Why do freelancers struggle to manage their time across multiple clients?"
 - Challenge (v1): "Build a time management tool that helps freelancers balance work across multiple clients"
 
-### 4. Create the CBL Session File
+### 4. Choose a Slug and Create the CBL Session File
 
-After the user confirms their Big Idea, Essential Question, and Challenge, save a CBL session file at the project root.
+After the user confirms their Big Idea, Essential Question, and Challenge, derive a kebab-case slug from the Challenge title (e.g. "Build a time management tool" → `time-management-tool`) and confirm it with the user — this names the new folder. If `cbl-wiki/challenges/<slug>/` already exists, ask for a different slug.
 
-**Learn mode** — create `cbl-session.md` with this structure:
+Create `cbl-wiki/challenges/<slug>/session.md`.
+
+**Learn mode** — use this structure:
 
 ```markdown
 # CBL Session: [Challenge Title]
@@ -102,7 +104,7 @@ _Not started — run `/project:cbl:investigate` to begin_
 _Not started — run `/project:cbl:act` to begin_
 ```
 
-**Build mode** — create `cbl-session.md` with this structure:
+**Build mode** — use this structure:
 
 ```markdown
 # CBL Session: [Challenge Title]
@@ -140,17 +142,25 @@ _Not started — run `/project:cbl:act` to begin_
 _Not started — run `/project:cbl:act` to begin_
 ```
 
-### 5. Scaffold the CBL Wiki
+### 5. Scaffold the Challenge Folder + Activate It
 
-Read `.claude/cbl-wiki.md` for the full conventions, then create the `cbl-wiki/` vault:
+Read `.claude/cbl-wiki.md` for the full conventions (shared folders, frontmatter
+schema, `.cbl-active`). If `cbl-wiki/concepts/`, `cbl-wiki/sources/`, and
+`cbl-wiki/raw/` don't exist yet (first-ever challenge in this vault), create them —
+they're shared across all challenges. Then create `cbl-wiki/challenges/<slug>/`:
 
-1. `cbl-wiki/index.md` — Map of Content: the challenge one-liner, a progress line, and
+1. `index.md` — Map of Content: the challenge one-liner, a progress line, and
    (initially empty) sections linking to questions, concepts, sources, synthesis.
-2. `cbl-wiki/challenge.md` — frontmatter `type: challenge`, with the Big Idea, Essential
-   Question, and Challenge (Build mode: include the version + a history section).
-3. `cbl-wiki/log.md` — start the dated audit trail with the scaffold entry.
-4. Replace the `**Wiki:** _not created yet_` line in `cbl-session.md` with
-   `**Wiki:** cbl-wiki/`.
+   Frontmatter: `type: index`, `tags: [...]`, `challenge: <slug>`.
+2. `challenge.md` — frontmatter `type: challenge`, `tags: [...]`, `challenge: <slug>`,
+   with the Big Idea, Essential Question, and Challenge (Build mode: include the
+   version + a history section).
+3. `log.md` — frontmatter `type: log`, `tags: [...]`, `challenge: <slug>`; start the
+   dated audit trail with the scaffold entry.
+4. `questions/` — empty folder, filled by `/project:cbl:investigate`.
+5. Write `<slug>` to the root `.cbl-active` file, replacing its previous contents.
+6. Replace the `**Wiki:** _not created yet_` line in the new `session.md` with
+   `**Wiki:** cbl-wiki/challenges/<slug>/`.
 
 This is plain markdown — no external service, no extra tokens. It renders as a graph in
 Obsidian.
@@ -159,7 +169,9 @@ Obsidian.
 
 Tell the user:
 - Their CBL journey has begun
-- The `cbl-wiki/` vault was created — questions, sources, findings, and syntheses will be
+- `<slug>` is now the active challenge (`.cbl-active`) — `/project:cbl:switch` can
+  change this later, and `/project:cbl:list` shows every challenge in the vault
+- The `cbl-wiki/challenges/<slug>/` folder was created — questions, sources, findings, and syntheses will be
   added there as linked pages; open the folder in Obsidian to see the graph
 - Next step: Run `/project:cbl:investigate` to start the Investigate phase
 - They can also run `/project:cbl:status` anytime to see their progress

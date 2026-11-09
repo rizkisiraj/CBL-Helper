@@ -7,7 +7,10 @@ knowledge-base loop.
 ## Conventions
 
 Read `.claude/cbl-wiki.md` for the vault layout, page formats, frontmatter, and linking
-rules. The target vault is **this project's `cbl-wiki/`**.
+rules. The target vault is **this project's `cbl-wiki/`**; `raw/`, `sources/`, and
+`concepts/` are shared across all challenges. Read the root `.cbl-active` file to get
+the active challenge slug — new concepts link to that challenge's
+`challenges/<slug>/questions/` where relevant.
 
 Additional input: `$ARGUMENTS` — optional: a specific filename in `raw/`, or `all`
 (default: every not-yet-compiled file).
@@ -27,12 +30,14 @@ Additional input: `$ARGUMENTS` — optional: a specific filename in `raw/`, or `
      `raw_file: raw/<filename>`, and `url:` if present. Don't editorialize here.
    - **Extract concepts** — identify the distinct ideas it teaches. For each, **read
      existing `concepts/` first** and *extend/strengthen* the matching page rather than
-     duplicating; only create a new page if none fits. Add `**Sources:** [[<source>]]`.
+     duplicating; only create a new page if none fits. Add `**Sources:** [[<source>]]`
+     and a topic `tags:` field.
    - **Wire links** — connect new concepts to related existing `[[concepts]]`, and to any
-     `[[questions]]` they answer (flip those question pages to `status: answered`).
+     `[[questions]]` they answer in the active challenge's `questions/` folder (flip
+     those question pages to `status: answered`).
 
-3. **Maintain index + log** — update `index.md` (new pages, progress count) and append
-   one dated line to `log.md` per compiled source.
+3. **Maintain index + log** — update the active challenge's `index.md` (new pages,
+   progress count) and append one dated line to its `log.md` per compiled source.
 
 4. **Report** — which raw files were compiled, what pages were created vs extended, which
    questions got answered, and any docs too thin to extract cleanly. Suggest running

@@ -1,22 +1,27 @@
 # CBL: Lint the Wiki (health check)
 
-Run a health pass over this project's `cbl-wiki/` to keep it coherent, find gaps, and
-surface new things worth investigating. Safe to run anytime; also invoked by
-`/project:cbl:synthesize`.
+Run a health pass over the **whole vault** (`cbl-wiki/`) — every challenge under
+`challenges/`, not just the active one, plus the shared `concepts/`/`sources/` folders —
+to keep it coherent, find gaps, and surface new things worth investigating. Safe to run
+anytime; also invoked by `/project:cbl:synthesize` (scoped to the active challenge in
+that case).
 
 ## Conventions
 
 Read `.claude/cbl-wiki.md` for the vault layout and conventions. Target vault =
-`cbl-wiki/`. Input: `$ARGUMENTS` — optional focus (e.g. `links`, `contradictions`,
-`enrich`).
+`cbl-wiki/` (all challenges + shared folders). Input: `$ARGUMENTS` — optional focus
+(e.g. `links`, `contradictions`, `enrich`, or a challenge slug to scope to just one).
 
 ## Checks
 
 1. **Structural**
    - **Orphans** — pages with no inbound links; propose links or flag.
-   - **Broken links** — `[[slug]]` with no matching file; create a stub or fix the link.
+   - **Broken links** — `[[slug]]` with no matching file anywhere in the vault; create a
+     stub or fix the link.
    - **Coverage** — answered questions with no linked concept; concepts with no source;
      open questions that an existing concept actually already answers.
+   - **Missing topic tags** — any note whose `tags:` is empty or still `[cbl]` instead of
+     real topic tags; flag for the user to fill in.
 
 2. **Integrity**
    - **Contradictions / inconsistencies** between concept pages — flag both pages and

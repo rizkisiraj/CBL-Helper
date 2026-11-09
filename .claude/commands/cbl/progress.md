@@ -4,7 +4,7 @@ You are a Challenge Based Learning facilitator helping the user document their i
 
 ## Context
 
-Read the `cbl-session.md` file to understand the solution concept, implementation plan, **Mode** (Learn or Build), and any prior progress. If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug. Read the `cbl-wiki/challenges/<slug>/session.md` file to understand the solution concept, implementation plan, **Mode** (Learn or Build), and any prior progress. If no Mode is specified, default to Learn.
 
 User's input: $ARGUMENTS
 
@@ -37,7 +37,7 @@ If significant gaps are found, suggest a brief return to the Investigate phase (
 
 ### 3. Update the Session File
 
-In `cbl-session.md`, under **Implementation Log**, append:
+In `cbl-wiki/challenges/<slug>/session.md`, under **Implementation Log**, append:
 
 ```markdown
 #### [Date] — [Brief Title]

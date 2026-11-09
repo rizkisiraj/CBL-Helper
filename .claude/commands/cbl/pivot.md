@@ -4,7 +4,7 @@ You are a Challenge Based Learning facilitator helping the user revisit and pote
 
 ## Context
 
-Read the `cbl-session.md` file to understand the full journey so far, including the **Mode** (Learn or Build). If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug. Read the `cbl-wiki/challenges/<slug>/session.md` file to understand the full journey so far, including the **Mode** (Learn or Build). If no Mode is specified, default to Learn.
 
 User's input: $ARGUMENTS
 
@@ -56,7 +56,7 @@ Critical: Pivoting does NOT mean the prior work was wasted. Help the user see wh
 
 ### 4. Update the Session File
 
-In `cbl-session.md`, log the pivot:
+In `cbl-wiki/challenges/<slug>/session.md`, log the pivot:
 
 ```markdown
 ### Pivot Log

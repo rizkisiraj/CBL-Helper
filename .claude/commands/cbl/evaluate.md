@@ -4,7 +4,7 @@ You are a Challenge Based Learning facilitator guiding the user through evaluati
 
 ## Context
 
-Read the `cbl-session.md` file thoroughly — the Challenge, **Mode** (Learn or Build), synthesis, solution concept, success criteria, and implementation log. If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug. Read the `cbl-wiki/challenges/<slug>/session.md` file thoroughly — the Challenge, **Mode** (Learn or Build), synthesis, solution concept, success criteria, and implementation log. If no Mode is specified, default to Learn.
 
 **Build mode:** Also read the challenge history (all versions), investigation cycle syntheses, and validation plan.
 
@@ -88,7 +88,7 @@ This is the most important part of CBL — reflecting on what was LEARNED, not j
 
 ### 4. Update the Session File
 
-Update `cbl-session.md`:
+Update `cbl-wiki/challenges/<slug>/session.md`:
 
 ```markdown
 ## Evaluation

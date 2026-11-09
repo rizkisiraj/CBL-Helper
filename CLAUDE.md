@@ -34,6 +34,8 @@ All commands are under `/project:cbl:*`:
 | `/project:cbl:status` | Any | View current session status and next steps |
 | `/project:cbl:reflect` | Any | Quick reflection check-in |
 | `/project:cbl:pivot` | Any | Adjust or change Challenge direction |
+| `/project:cbl:list` | Any | List all challenges in the vault with mode, phase, and progress |
+| `/project:cbl:switch` | Any | Change the active challenge (`.cbl-active`) |
 
 ## Typical Flow
 
@@ -69,7 +71,11 @@ The number of cycles varies — you might skip validation if confident, or do ex
 
 ## Session File
 
-All session state is tracked in `cbl-session.md` at the project root. This file is created by `/project:cbl:start` and updated by all other commands.
+Each CBL challenge has its own session file at `cbl-wiki/challenges/<slug>/session.md`.
+A root file, **`.cbl-active`**, names which challenge's session file the commands act
+on. This file is created by `/project:cbl:start` and updated by all other commands.
+Switch between challenges with `/project:cbl:switch <slug>`; list them all with
+`/project:cbl:list`.
 
 In Build mode, the session file additionally tracks:
 - **Challenge History** — version table showing how the challenge evolved
@@ -79,42 +85,65 @@ In Build mode, the session file additionally tracks:
 ## Wiki Integration (Obsidian-style knowledge graph)
 
 CBL commands maintain a local **wiki** — a folder of cross-linked markdown pages that
-grows as the learner investigates. Based on Karpathy's "LLM Wiki" pattern: the wiki is
-the codebase, the LLM is the programmer, Obsidian is the IDE. CBL data is already
-graph-shaped (findings cite **sources** and answer **questions**), so the graph draws
-itself: Challenge → Questions → Concepts → Sources.
+spans multiple topics and multiple CBL challenges. Based on Karpathy's "LLM Wiki"
+pattern: the wiki is the codebase, the LLM is the programmer, Obsidian is the IDE. CBL
+data is already graph-shaped (findings cite **sources** and answer **questions**), so
+the graph draws itself: Challenge → Questions → Concepts → Sources.
 
 It's plain markdown in the repo — no external service, no MCP, ~0 extra tokens, version
 controlled — and renders as a graph in Obsidian.
 
-**Source of truth:** `cbl-session.md` stays canonical (the linear journal). The wiki in
-`cbl-wiki/` is derived from it and can be rebuilt at any time.
+**Source of truth:** each challenge's `session.md` stays canonical (the linear
+journal). The wiki in `cbl-wiki/` is derived from it and can be rebuilt at any time.
 
 **Structure:**
 ```
 cbl-wiki/
-├── raw/            # immutable dropped source docs — compiled by /project:cbl:ingest
-├── index.md        # Map of Content + progress
-├── log.md          # dated update trail
-├── challenge.md    # Big Idea / Essential Question / Challenge (+ versions in Build)
-├── questions/      # one page per Guiding Question
-├── concepts/       # one page per synthesized finding (the knowledge)
-├── sources/        # one page per Guiding Resource / cited source
-└── synthesis/      # one page per synthesis (per cycle in Build mode)
+├── 00-inbox/           # quick captures, triaged later
+├── daily/              # work-day dev journal, YYYY-MM-DD.md
+├── bugs/               # one note per bug
+├── concepts/           # SHARED across all challenges/topics
+├── sources/            # SHARED — one page per Guiding Resource / cited source
+├── raw/                # SHARED — immutable dropped source docs, compiled by /project:cbl:ingest
+├── challenges/
+│   └── <slug>/         # one folder per CBL challenge
+│       ├── session.md
+│       ├── challenge.md
+│       ├── index.md
+│       ├── log.md
+│       ├── synthesis.md (or synthesis-cycle-N.md)
+│       └── questions/
+├── maps/               # hub notes (MOCs) per topic
+└── templates/          # Obsidian note templates
+```
+
+**Frontmatter schema (every note):**
+```yaml
+type: concept | question | source | challenge | index | log | daily | bug | dsa-session | hub | handbook
+status: open | answered | draft
+tags: [<topic tags>]      # e.g. database, system-design, distributed-systems, dsa, ios
+challenge: <slug>         # only on challenge-specific notes
 ```
 
 **What each command does:**
-- `start` — scaffolds the vault (`index.md`, `challenge.md`, `log.md`) and records
-  `**Wiki:** cbl-wiki/` in the session header.
-- `investigate` — a `questions/` page per Guiding Question and a `sources/` page per
-  Guiding Resource.
-- `learn` — *ingest* (narrated): the finding becomes a `concepts/` page linked to the
-  `[[question]]` it answers (flipped to `status: answered`) and its `[[source]]`.
-- `ingest` — *ingest* (from documents): compiles files dropped in `raw/` into `sources/`
-  summaries + extracted `concepts/` with backlinks. Incremental, offline, immutable raw.
-- `synthesize` — a `synthesis/` page linking the concepts/questions, then a *lint* pass.
-- `lint` — health check on demand: orphans, broken links, contradictions, plus
-  enrichment (web-imputed gaps, new article/question candidates) with consent.
+- `start` — creates `cbl-wiki/challenges/<slug>/` with its own `index.md`,
+  `challenge.md`, `log.md`, `session.md`, and sets `.cbl-active` to the new slug.
+- `investigate` — a `questions/` page per Guiding Question and a shared `sources/` page
+  per Guiding Resource, scoped to the active challenge.
+- `learn` — *ingest* (narrated): the finding becomes a shared `concepts/` page linked to
+  the `[[question]]` it answers in the active challenge (flipped to `status: answered`)
+  and its `[[source]]`.
+- `ingest` — *ingest* (from documents): compiles files dropped in the shared `raw/` into
+  `sources/` summaries + extracted `concepts/` with backlinks. Incremental, offline,
+  immutable raw.
+- `synthesize` — a `synthesis.md`/`synthesis-cycle-N.md` page in the active challenge's
+  folder linking the concepts/questions, then a *lint* pass.
+- `lint` — health check across the **whole vault**: orphans, broken links,
+  contradictions, missing topic tags, plus enrichment (web-imputed gaps, new
+  article/question candidates) with consent.
+- `list` — table of every challenge under `challenges/`, its mode/phase/progress, and
+  which one is active.
+- `switch <slug>` — changes `.cbl-active`.
 
 **Global counterparts:** `/log-resource`, `/log-concept`, `/kb-ingest`, `/kb-lint` do the
 same for a single long-lived vault shared across all projects (see `~/.claude/global-knowledge.md`).

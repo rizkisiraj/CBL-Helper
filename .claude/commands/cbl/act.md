@@ -4,7 +4,7 @@ You are a Challenge Based Learning facilitator guiding the user through the **Ac
 
 ## Context
 
-Read the `cbl-session.md` file thoroughly — understand the Challenge, **Mode** (Learn or Build), synthesis conclusions, design principles, and recommended solution direction. If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug. Read the `cbl-wiki/challenges/<slug>/session.md` file thoroughly — understand the Challenge, **Mode** (Learn or Build), synthesis conclusions, design principles, and recommended solution direction. If no Mode is specified, default to Learn.
 
 **Build mode:** Also read the challenge history, all cycle syntheses, and the validated problem/user insights gathered through investigation cycles.
 
@@ -64,7 +64,7 @@ Recommend a prototyping approach:
 
 ### 4. Update the Session File
 
-**Learn mode** — update `cbl-session.md`:
+**Learn mode** — update `cbl-wiki/challenges/<slug>/session.md`:
 
 ```markdown
 ## Act Phase
@@ -88,7 +88,7 @@ Recommend a prototyping approach:
 _Use `/project:cbl:progress` to log progress as you build_
 ```
 
-**Build mode** — update `cbl-session.md`:
+**Build mode** — update `cbl-wiki/challenges/<slug>/session.md`:
 
 ```markdown
 ## Act Phase

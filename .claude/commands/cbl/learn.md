@@ -4,7 +4,8 @@ You are a Challenge Based Learning facilitator helping the user document what th
 
 ## Context
 
-Read the `cbl-session.md` file to understand the current session, **Mode** (Learn or Build), Guiding Questions, and activities. If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug, then read
+`cbl-wiki/challenges/<slug>/session.md` to understand the current session, **Mode** (Learn or Build), Guiding Questions, and activities. If no Mode is specified, default to Learn.
 
 **Build mode:** Also identify the current investigation cycle number and focus.
 
@@ -38,7 +39,7 @@ Be honest about gaps — it's fine to have surface understanding early on.
 
 ### 3. Update the Session File
 
-**Learn mode** — in `cbl-session.md`, under the **Findings & Analysis** section, append:
+**Learn mode** — in `cbl-wiki/challenges/<slug>/session.md`, under the **Findings & Analysis** section, append:
 
 ```markdown
 #### [Date] — [Brief Title]
@@ -49,7 +50,7 @@ Be honest about gaps — it's fine to have surface understanding early on.
 **New Questions:** [Any new questions that emerged]
 ```
 
-**Build mode** — in `cbl-session.md`, under the **current cycle's Findings** section, append:
+**Build mode** — in `cbl-wiki/challenges/<slug>/session.md`, under the **current cycle's Findings** section, append:
 
 ```markdown
 ##### [Date] — [Brief Title]
@@ -68,18 +69,24 @@ If new questions emerged, add them to the appropriate Guiding Questions category
 
 ### 3b. Ingest into the CBL Wiki
 
-Read `.claude/cbl-wiki.md` for conventions. If `cbl-wiki/` doesn't exist, skip (or offer
-to scaffold). Otherwise, **ingest** the finding into the graph:
+Read `.claude/cbl-wiki.md` for conventions. If `cbl-wiki/challenges/<slug>/` doesn't
+exist, skip (or offer to scaffold). Otherwise, **ingest** the finding into the graph:
 
 1. **Read existing pages first** — recognize whether this finding extends an existing
-   `concepts/` page or warrants a new one. Strengthen links; don't duplicate.
-2. Create/extend `cbl-wiki/concepts/<slug>.md` — the synthesized knowledge, with
-   **Answers:** links to the `[[question]]`(s) it resolves, **Sources:** links to the
-   `[[source]]` page(s) and/or external URLs, and `[[concept]]` links to related ideas.
-3. For each question answered, flip its page frontmatter to `status: answered` and link
-   the `[[concept]]`.
-4. If new questions emerged, create new `questions/` stub pages.
-5. Update `index.md` (progress count) and append a dated line to `log.md`.
+   `concepts/` page or warrants a new one. Strengthen links; don't duplicate. `concepts/`
+   is shared across all challenges, so check it even if the match came from a different
+   challenge.
+2. Create/extend `cbl-wiki/concepts/<slug>.md` (shared folder) — the synthesized
+   knowledge, with topic `tags: [...]`, **Answers:** links to the `[[question]]`(s) it
+   resolves, **Sources:** links to the `[[source]]` page(s) and/or external URLs, and
+   `[[concept]]` links to related ideas.
+3. For each question answered, flip its page frontmatter (in
+   `cbl-wiki/challenges/<slug>/questions/`) to `status: answered` and link the
+   `[[concept]]`.
+4. If new questions emerged, create new `questions/` stub pages in the active
+   challenge's folder.
+5. Update `index.md` (progress count) and append a dated line to `log.md` — both in
+   `cbl-wiki/challenges/<slug>/`.
 
 ### 4. Suggest Next Steps
 

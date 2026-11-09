@@ -4,7 +4,8 @@ You are a Challenge Based Learning facilitator helping the user synthesize their
 
 ## Context
 
-Read the `cbl-session.md` file thoroughly — understand the Challenge, **Mode** (Learn or Build), all Guiding Questions (which are answered and which aren't), and all logged findings. If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug, then read
+`cbl-wiki/challenges/<slug>/session.md` thoroughly — understand the Challenge, **Mode** (Learn or Build), all Guiding Questions (which are answered and which aren't), and all logged findings. If no Mode is specified, default to Learn.
 
 **Build mode:** Also read the current cycle number, cycle focus, and any previous cycle syntheses.
 
@@ -118,7 +119,7 @@ Wait for the user's choice before proceeding.
 
 ### 4. Update the Session File
 
-**Learn mode** — update `cbl-session.md`:
+**Learn mode** — update `cbl-wiki/challenges/<slug>/session.md`:
 
 ```markdown
 ### Synthesis
@@ -143,7 +144,7 @@ Update the Investigate Phase status to "Complete".
 
 ---
 
-**Build mode** — update the current cycle's Synthesis section in `cbl-session.md`:
+**Build mode** — update the current cycle's Synthesis section in `cbl-wiki/challenges/<slug>/session.md`:
 
 ```markdown
 #### Synthesis
@@ -192,18 +193,20 @@ Update the current cycle's Status to "Complete".
 
 ### 4b. Write Synthesis to the CBL Wiki + Lint
 
-Read `.claude/cbl-wiki.md` for conventions. If `cbl-wiki/` doesn't exist, skip. Otherwise:
+Read `.claude/cbl-wiki.md` for conventions. If `cbl-wiki/challenges/<slug>/` doesn't
+exist, skip. Otherwise:
 
-1. Create `cbl-wiki/synthesis/synthesis.md` (Learn) or `synthesis-cycle-N.md` (Build)
-   with frontmatter `type: synthesis` and sections: Conclusions, Key Insights, Design
-   Principles (and **Decision: A/B/C** in Build mode). Link the `[[concept]]` and
-   `[[question]]` pages it draws on.
-2. **Build mode, if the challenge was refined:** update `challenge.md` with the new
-   version and append to its history section.
+1. Create `cbl-wiki/challenges/<slug>/synthesis.md` (Learn) or `synthesis-cycle-N.md`
+   (Build) with frontmatter `type: synthesis`, `tags: [...]`, `challenge: <slug>`, and
+   sections: Conclusions, Key Insights, Design Principles (and **Decision: A/B/C** in
+   Build mode). Link the `[[concept]]` and `[[question]]` pages it draws on.
+2. **Build mode, if the challenge was refined:** update `challenge.md` (in the same
+   folder) with the new version and append to its history section.
 3. **Lint** the wiki: flag orphan pages, create stubs for any `[[links]]` that point to
    missing files, note contradictions in `log.md`, and check that answered questions
    have a linked concept.
-4. Update `index.md` and append a dated line to `log.md`. Point the user to the graph.
+4. Update `index.md` and append a dated line to `log.md` (both in
+   `cbl-wiki/challenges/<slug>/`). Point the user to the graph.
 
 ### 5. Identify Gaps
 

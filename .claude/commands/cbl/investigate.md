@@ -4,7 +4,8 @@ You are a Challenge Based Learning facilitator guiding the user through the **In
 
 ## Context
 
-Read the `cbl-session.md` file in the project root to understand the current CBL session — the Big Idea, Essential Question, Challenge, and **Mode** (Learn or Build). If no Mode is specified, default to Learn.
+Read the root `.cbl-active` file to get the active challenge slug, then read
+`cbl-wiki/challenges/<slug>/session.md` to understand the current CBL session — the Big Idea, Essential Question, Challenge, and **Mode** (Learn or Build). If no Mode is specified, default to Learn.
 
 Additional user input: $ARGUMENTS
 
@@ -150,7 +151,7 @@ Suggest specific resource types for the activities. If the Challenge is technica
 
 ## Step 7 — Update the Session File
 
-**Learn mode** — update `cbl-session.md` to include:
+**Learn mode** — update `cbl-wiki/challenges/<slug>/session.md` to include:
 
 ```markdown
 ## Investigate Phase
@@ -202,7 +203,7 @@ Suggest specific resource types for the activities. If the Challenge is technica
 _Use `/project:cbl:learn` as you work through activities to log findings here_
 ```
 
-**Build mode** — update the current cycle section inside `cbl-session.md`. Do NOT overwrite previous cycle sections:
+**Build mode** — update the current cycle section inside `cbl-wiki/challenges/<slug>/session.md`. Do NOT overwrite previous cycle sections:
 
 ```markdown
 ## Investigate Phase
@@ -263,17 +264,18 @@ _Run `/project:cbl:synthesize` when you've answered enough questions_
 
 ## Step 7b — Update the CBL Wiki
 
-Read `.claude/cbl-wiki.md` for conventions. If `cbl-wiki/` doesn't exist yet (older
-session), scaffold it first (index/challenge/log). Then:
+Read `.claude/cbl-wiki.md` for conventions. If `cbl-wiki/challenges/<slug>/` doesn't
+exist yet (older session), scaffold it first (index/challenge/log). Then:
 
-1. Create a `cbl-wiki/questions/<slug>.md` page for each Guiding Question — frontmatter
-   with `type: question`, `status: open`, its `category` (and `cycle: N` in Build mode),
-   title = the question verbatim, body linking back to `[[challenge]]`.
-2. Create a `cbl-wiki/sources/<slug>.md` page for each Guiding Resource — what it is, its
-   URL, and what it's expected to teach.
-3. (Guiding Activities stay in `cbl-session.md`; they aren't graph nodes.)
+1. Create a `cbl-wiki/challenges/<slug>/questions/<question-slug>.md` page for each
+   Guiding Question — frontmatter with `type: question`, `status: open`, its `category`
+   (and `cycle: N` in Build mode), `tags: [...]`, `challenge: <slug>`, title = the
+   question verbatim, body linking back to `[[challenge]]`.
+2. Create a `cbl-wiki/sources/<source-slug>.md` page (shared folder) for each Guiding
+   Resource — what it is, its URL, and what it's expected to teach.
+3. (Guiding Activities stay in `session.md`; they aren't graph nodes.)
 4. Update `index.md` (add the new question/source links + progress count) and append a
-   dated line to `log.md`.
+   dated line to `log.md` — both in `cbl-wiki/challenges/<slug>/`.
 
 This is local markdown only — no external calls. Tell the user findings will attach as
 linked `[[concept]]` pages when they `/learn`, and they can open `cbl-wiki/` in Obsidian.
