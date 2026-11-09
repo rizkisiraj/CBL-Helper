@@ -6,3 +6,7 @@ cbl-wiki/.obsidian/workspace-mobile.json
 
 # Native plugin binaries (platform-specific, not needed on Android)
 cbl-wiki/.obsidian/plugins/lean-terminal/node_modules/
+
+# Shell history captured by the lean-terminal plugin — contains local command history,
+# repo is public
+cbl-wiki/.obsidian/plugins/lean-terminal/shell-integration/.zsh_history
