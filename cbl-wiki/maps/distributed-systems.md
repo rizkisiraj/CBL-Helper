@@ -17,6 +17,9 @@ load are spread across many machines instead of one.
 - [[cql-query-language]] — Cassandra's query language
 - [[discord-database-evolution]] — MongoDB → Cassandra → ScyllaDB case study
 - [[tail-latency-amplification]] — why one slow node slows an entire fanned-out request
+- [[lsm-tree]] — write-optimized storage behind Cassandra's memtable/SSTable flow
+- [[consistent-hashing]] — how keys get assigned to nodes on the ring without a full
+  reshuffle on every join/leave
 
 ## Open/answered questions
 - Horizontal vs vertical scaling — when do you hit the limits of a bigger server?

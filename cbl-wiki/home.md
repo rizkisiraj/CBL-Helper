@@ -11,6 +11,8 @@ tags: []
 - [[distributed-systems]]
 - [[dsa]]
 - [[ios]]
+- [[dsa-x-system-design]] — bridges between DSA patterns and real systems
+- [[graph-views]] — saved Graph View filters, including the bridges view
 
 ## Active challenge
 Read the root `.cbl-active` file for the current slug, then open

@@ -48,9 +48,9 @@ each one. One session note per day (`challenges/dsa/sessions/DayN.md`), not per 
 
 - Sliding window (fixed-size variants)
 - BFS / DFS (trees, graphs)
-- Binary search
+- [[binary-search|Binary search]] — stub exists, no problem solved yet
 - Backtracking
-- Heap / priority queue
+- [[heap-priority-queue|Heap / priority queue]] — stub exists, no problem solved yet
 - Union-Find
 - Topological sort
 - Trie
@@ -60,5 +60,10 @@ each one. One session note per day (`challenges/dsa/sessions/DayN.md`), not per 
 - [[space-complexity]] — the "does it scale with input" check that recurs across every
   session so far.
 
+## Where this shows up in real systems
+
+See [[dsa-x-system-design]] for how these patterns connect to the database/system
+design/distributed-systems concepts in this vault.
+
 ---
-**Related:** [[home]]
+**Related:** [[home]] · [[dsa-x-system-design]]
