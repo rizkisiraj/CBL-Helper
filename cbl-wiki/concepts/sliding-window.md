@@ -39,5 +39,6 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
 
 ## In real systems
 - A rate like [[tps]] is computed as a count over a moving time window (PromQL's `rate(...[5m])`), the same sliding-window idea applied to a metrics stream.
+- A sliding-window [[rate-limiting|rate limiter]] counts requests in the last N seconds instead of resetting at fixed clock boundaries.
 
 **Related:** [[hashmap]] · [[two-pointers]]

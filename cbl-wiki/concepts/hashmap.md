@@ -30,5 +30,8 @@ for char in "aab" {
 ## In real systems
 - [[cache-redis|Redis]] is essentially a giant in-memory hashmap with eviction policies and key expiry bolted on.
 - A database's hash index gives the same O(1) equality lookup as a hashmap, but — unlike a [[b-tree-index|B-tree]] — can't answer range queries; see [[database-index]].
+- Per-client request counters in a [[rate-limiting]] scheme are stored keyed by client ID.
+- An [[lru-cache]] pairs a hashmap (O(1) lookup) with a doubly linked list (recency order).
+- [[consistent-hashing]] stores node positions on the hash ring in a hashmap.
 
 **Related:** [[hashset]] · [[frequency-count]] · [[sliding-window]]
