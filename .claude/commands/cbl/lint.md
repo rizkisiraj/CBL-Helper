@@ -22,6 +22,13 @@ Read `.claude/cbl-wiki.md` for the vault layout and conventions. Target vault =
      open questions that an existing concept actually already answers.
    - **Missing topic tags** — any note whose `tags:` is empty or still `[cbl]` instead of
      real topic tags; flag for the user to fill in.
+   - **Missing DSA↔system bridges** — any `tag:#dsa` concept with no `## In real
+     systems` section, and any `tag:#database`/`tag:#system-design`/
+     `tag:#distributed-systems` concept with no `## Under the hood (DSA)` section.
+     List them by name — don't auto-write the bridge content, that needs judgment —
+     and let the user decide per note whether a real bridge exists or it's fine to
+     stay unbridged (don't force a stretch connection just to clear the list). See
+     [[dsa-x-system-design]] for the existing bridge table and `bridge` tag.
 
 2. **Integrity**
    - **Contradictions / inconsistencies** between concept pages — flag both pages and
