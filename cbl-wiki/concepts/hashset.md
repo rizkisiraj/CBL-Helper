@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # HashSet
@@ -30,5 +30,8 @@ func containsDuplicate(_ nums: [Int]) -> Bool {
 
 **Problems:**
 - [[Day4]] — 217. Contains Duplicate (single-pass `insert(_:).inserted` check)
+
+## In real systems
+- Idempotent message consumers deduplicate by keeping a set of already-processed message IDs — see [[message-queue]].
 
 **Related:** [[frequency-count]] · [[hashmap]]

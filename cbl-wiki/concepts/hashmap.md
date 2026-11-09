@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # HashMap
@@ -26,5 +26,9 @@ for char in "aab" {
 **Problems:**
 - [[Day10]] — 3. Longest Substring Without Repeating Characters (maps char → last seen
   index)
+
+## In real systems
+- [[cache-redis|Redis]] is essentially a giant in-memory hashmap with eviction policies and key expiry bolted on.
+- A database's hash index gives the same O(1) equality lookup as a hashmap, but — unlike a [[b-tree-index|B-tree]] — can't answer range queries; see [[database-index]].
 
 **Related:** [[hashset]] · [[frequency-count]] · [[sliding-window]]

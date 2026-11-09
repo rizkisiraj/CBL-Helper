@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Bucket Sort
@@ -38,5 +38,8 @@ func topKFrequent(_ nums: [Int], _ k: Int) -> [Int] {
 
 **Problems:**
 - [[Day9]] — 347. Top K Frequent Elements
+
+## In real systems
+- Latency histograms used to estimate [[latency-percentiles|p95/p99]] sort requests into fixed time buckets by index, the same bucketing idea as bucket sort.
 
 **Related:** [[frequency-count]]

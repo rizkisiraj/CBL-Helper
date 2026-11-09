@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Dynamic Programming
@@ -38,5 +38,8 @@ The critical bug to avoid: save the old `currentMax` in a temp before overwritin
 
 **Problems:**
 - [[Day7]] — 152. Maximum Product Subarray (tracks curMax + curMin per step)
+
+## In real systems
+- PostgreSQL's query planner uses dynamic programming to choose join order for a query — see [[explain-vs-explain-analyze]] — switching to a genetic optimizer once the table count gets too large for exhaustive DP.
 
 **Related:** [[kadanes-algorithm]] · [[greedy]] · [[prefix-suffix-products]]

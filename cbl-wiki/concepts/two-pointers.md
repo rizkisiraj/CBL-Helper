@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Two Pointers
@@ -35,5 +35,9 @@ func isPalindrome(_ s: String) -> Bool {
 
 **Problems:**
 - [[Day12]] — 125. Valid Palindrome
+
+## In real systems
+- [[cassandra-distributed-architecture|Cassandra's]] LSM-tree compaction merges sorted on-disk files the same way a two-pointer merge walks two sorted arrays.
+- A [[b-tree-index|B-tree]] range scan or a merge join walks sorted keys with two pointers advancing in lockstep.
 
 **Related:** [[stack]] · [[sliding-window]]

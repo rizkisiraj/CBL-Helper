@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Frequency Count
@@ -33,5 +33,8 @@ func isAnagram(_ s: String, _ t: String) -> Bool {
 
 **Problems:**
 - [[Day8]] — 242. Valid Anagram (fixed-size array of 26 as a HashMap substitute)
+
+## In real systems
+- [[cache-hit-ratio]] is a frequency count of two outcomes (hit vs miss) — the same tally, just over cache accesses instead of characters.
 
 **Related:** [[hashset]] · [[hashmap]] · [[bucket-sort]]

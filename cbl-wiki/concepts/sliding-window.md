@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Sliding Window
@@ -36,5 +36,8 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
 
 **Problems:**
 - [[Day10]] — 3. Longest Substring Without Repeating Characters
+
+## In real systems
+- A rate like [[tps]] is computed as a count over a moving time window (PromQL's `rate(...[5m])`), the same sliding-window idea applied to a metrics stream.
 
 **Related:** [[hashmap]] · [[two-pointers]]

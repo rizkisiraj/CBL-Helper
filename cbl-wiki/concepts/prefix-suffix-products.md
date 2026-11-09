@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Prefix/Suffix Products
@@ -37,5 +37,8 @@ func productExceptSelf(_ nums: [Int]) -> [Int] {
 
 **Problems:**
 - [[Day5]] — 238. Product of Array Except Self
+
+## In real systems
+- A monitoring counter like [[tps]] is cumulative; the rate shown on a dashboard is the difference between two running totals, the same running-prefix idea used here instead of a division.
 
 **Related:** [[dynamic-programming]]

@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Space Complexity
@@ -23,5 +23,8 @@ the input (one entry per character seen, one bucket per element) is O(n).
   need the whole array, or just the latest accumulated value?" before allocating one.
 - Any growing structure (a stack, a visited set) is O(n), even if it feels like
   "just bookkeeping" ([[stack]]).
+
+## In real systems
+- A [[database-index]] and a [[cache-redis|cache]] are the same trade spent two ways — disk or RAM — buying lookup speed with extra space, exactly the time-space tradeoff this concept names.
 
 **Related:** [[prefix-suffix-products]] · [[stack]] · [[hashset]]

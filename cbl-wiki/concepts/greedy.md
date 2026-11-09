@@ -1,7 +1,7 @@
 ---
 type: concept
 status: answered
-tags: [dsa]
+tags: [dsa, bridge]
 ---
 
 # Greedy
@@ -34,5 +34,8 @@ func greedyScan(_ nums: [Int]) -> Int {
 **Problems:**
 - [[Day3]] — 121. Best Time to Buy and Sell Stock (track min-so-far, max profit at each step)
 - [[Day6]] — 53. Maximum Subarray (Kadane's — see [[kadanes-algorithm]])
+
+## In real systems
+- "Least connections" load balancing picks whichever backend has the fewest open connections right now and never revisits that choice — a greedy decision made fresh per request, tied to [[connection-pool-size]].
 
 **Related:** [[kadanes-algorithm]]
